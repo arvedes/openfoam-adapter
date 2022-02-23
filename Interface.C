@@ -250,14 +250,10 @@ void preciceAdapter::Interface::configureMesh(const fvMesh& mesh)
                 {
                     const face& faceQuad = faceField[facei];
 
-                    triEngine.triangulate
-                    (
-                        UIndirectList<point>
-                        (
+                    triEngine.triangulate(
+                        UIndirectList<point>(
                             pointCoords,
-                            faceQuad
-                        )
-                    );
+                            faceQuad));
 
                     for (uint triIndex = 0; triIndex < triaPerQuad; triIndex++)
                     {
@@ -265,12 +261,8 @@ void preciceAdapter::Interface::configureMesh(const fvMesh& mesh)
                         {
                             for (uint xyz = 0; xyz < componentsPerNode; xyz++)
                                 triCoords[coordIndex++] = pointCoords
-                                [
-                                    triEngine.triPoints()[triIndex]
-                                    [
-                                        nodeIndex
-                                    ]
-                                ][xyz];
+                                    [triEngine.triPoints()[triIndex]
+                                                          [nodeIndex]][xyz];
                         }
                     }
                 }
