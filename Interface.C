@@ -154,11 +154,10 @@ void preciceAdapter::Interface::configureMesh(const fvMesh& mesh)
                     else
                     {
                         WarningInFunction
-                            << "It seems like you are using preCICE in 2D and your geometry is not located int the xy-plane. "
-                               "The OpenFOAM adapter implementation supports preCICE 2D cases only with the z-axis as out-of-plane direction."
-                               "Please rotate your geometry so that the geometry is located in the xy-plane."
-                               "If you are running a 2D axisymmetric case just ignore this."
-                            << nl;
+                            << "It seems like you are using preCICE in 2D and your geometry is not located int the xy-plane. " << nl
+                            << "The OpenFOAM adapter implementation supports preCICE 2D cases only with the z-axis as out-of-plane direction. " << nl
+                            << "Please rotate your geometry so that the geometry is located in the xy-plane. " << nl
+                            << "If you are running a 2D axisymmetric case just ignore this." << nl;
                         break;
                     }
                 }
