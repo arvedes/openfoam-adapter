@@ -158,7 +158,6 @@ void preciceAdapter::Interface::configureMesh(const fvMesh& mesh)
                                "The OpenFOAM adapter implementation supports preCICE 2D cases only with the z-axis as out-of-plane direction."
                                "Please rotate your geometry so that the geometry is located in the xy-plane."
                                "If you are running a 2D axisymmetric case just ignore this."
-                            << exit(FatalError);
                     }
                 }
             }
